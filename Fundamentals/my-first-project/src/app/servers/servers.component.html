@@ -1,0 +1,30 @@
+<p>servers works!</p>
+
+<!-- property binding -->
+<!-- event binding -->
+<!-- ngclass -->
+<button
+  class="btn btn-primary"
+  [ngClass]="{
+    btn: true,
+    'btn-primary': allowNewServer,
+    'btn-secondary': !allowNewServer
+  }"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add servers
+</button>
+
+<!-- ngIf directive -->
+<p *ngIf="serverStatus !== 'No server added'">
+  {{ serverStatus }}
+</p>
+
+<app-server *ngFor="let server of servers" [server]="server"></app-server>
+<!-- ngFor directive -->
+<div *ngFor="let item of items">
+  <p [ngStyle]="{ fontWeight: item % 2 === 1 ? 'bold' : 'normal' }">
+    {{ item }}
+  </p>
+</div>

@@ -1,0 +1,6 @@
+<p>parent works!</p>
+<p *ngIf="showChildData">Data send from child component = {{ childData }}</p>
+<app-child
+  [data]="parentData"
+  (newItemEvent)="displayChildData($event)"
+></app-child>

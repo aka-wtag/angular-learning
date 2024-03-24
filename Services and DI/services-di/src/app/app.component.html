@@ -1,0 +1,5 @@
+<app-greet></app-greet>
+<button (click)="subscribed()">Subscribe</button>
+<ng-container *ngFor="let user of userList">
+  <p>{{ user }}</p>
+</ng-container>

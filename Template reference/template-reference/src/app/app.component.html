@@ -1,0 +1,48 @@
+<input #phone placeholder="phone number" />
+
+<button type="button" (click)="callPhone(phone.value)">Call</button>
+<h5 *ngIf="showLabel">Calling...</h5>
+
+<app-parent></app-parent>
+
+<hr />
+
+<div>
+  <h2>Ng Container</h2>
+  <!-- No extra div added -->
+  <ng-container *ngIf="condition">
+    <p>Content to be rendered conditionally.</p>
+  </ng-container>
+  <ng-container *ngFor="let n of items">
+    <p>{{ n }}</p>
+  </ng-container>
+</div>
+
+<hr />
+
+<div>
+  <h2>Ng Content</h2>
+  <app-content>
+    <p #para>Projected content</p>
+
+    <p #data>Projected Data 1</p>
+    <p #data>Projected Data 2</p>
+  </app-content>
+</div>
+
+<hr />
+
+<div>
+  <h2>Ng Template</h2>
+
+  <ng-template #trueTemplate>
+    <p>This content is shown when condition is true.</p>
+  </ng-template>
+  <ng-template #falseTemplate>
+    <p>This content is shown when condition is false.</p>
+  </ng-template>
+
+  <div *ngIf="!condition; else falseTemplate">
+    <ng-container *ngTemplateOutlet="trueTemplate"></ng-container>
+  </div>
+</div>
