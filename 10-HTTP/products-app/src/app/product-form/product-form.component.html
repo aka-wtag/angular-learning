@@ -1,0 +1,21 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">
+  <br />
+  <br />
+  <label>Product Name:</label>
+  <input
+    placeholder="Product Name..."
+    formControlName="productName"
+    type="text"
+  />
+  <br />
+  <br />
+  <label>Product Name:</label>
+  <textarea
+    placeholder="Product Desc..."
+    formControlName="productDesc"
+    type="text"
+  ></textarea>
+  <br />
+  <br />
+  <button>Add</button>
+</form>

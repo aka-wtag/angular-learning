@@ -1,0 +1,4 @@
+<h1>Products APP</h1>
+<button (click)="toggleProductForm()">{{ showFromButtonTitle }}</button>
+<app-product-form *ngIf="showForm"></app-product-form>
+<app-product-list></app-product-list>
