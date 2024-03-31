@@ -44,6 +44,13 @@ export class ProductService {
   }
 
   deleteProduct(id) {
-    this.http.delete('http://localhost:8080/products/' + id).subscribe();
+    this.http.delete('http://localhost:8080/products/' + id).subscribe({
+      next() {
+        console.log('Product ' + id + ' deleted...');
+      },
+      error(err) {
+        console.log(err);
+      },
+    });
   }
 }
